@@ -1,37 +1,128 @@
-## Welcome to GitHub Pages
+# AP  [![Build Status](https://travis-ci.org/kssim/ap.svg?branch=master)](https://travis-ci.org/kssim/ap.svg?branch=master)
+"AP" is [Jekyll](https://jekyllrb.com/) theme for career. This theme is free and open-source.  
+Based on Chester How's tale-theme(https://github.com/chesterhow/tale) with a few new features:  
+* SNS Link
+* Google Analytics
+* Responsive design
+* Upgrading awesome fonts and modifying some layouts.
+* Use "About" as main.
+  * It can be written in simple resume form.
+* Change "Post" to "Project Portfolio"
+  * You can manage your project experience just like running a blog.
 
-You can use the [editor on GitHub](https://github.com/sunsean21/sunsean21.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Preview
+[![AP Screenshot](https://github.com/kssim/ap/blob/master/screenshot.png?raw=true)](https://kssim.github.io/ap/)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Usage
+1. Fork and clone the AP repo:
+    * git clone https://github.com/kssim/ap.git
+2. Install Jekyll:
+    * gem install jekyll
+3. Install the theme's dependencies
+    * bundle install
+4. Customize the theme
+    * update _config.yml
+5. Run the Jekyll server
+    * jekyll serve
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Structure
+* Here are the main files of the template
+```bash
+ap
+├── _includes                  # theme includes
+├── _layouts                   # theme layouts (see below for details)
+├── _posts                     # Project & Portfolio posts
+├── _sass                      # Sass partials 
+├── portfolio                  # Main page for "portfolio"
+├── assets
+|  ├── css                     # font-awesome and main css
+|  ├── fonts                   # Font-Awesome
+|  ├── favicon.ico             # Favicon
+|  └── img                     # Images used for "about" page
+├── _config.yml                # sample configuration
+└── index.md                   # Resume to show on "about" page
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Configure AP
+Open _config.yml in a text editor to change most of the blog's settings.
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sunsean21/sunsean21.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Site Configuration
+Configure Jekyll as your own blog or with a subpath in in _config.yml:  
+```yml
+title: [Website Title]
+baseurl: [Website Subpath]
+url: [Github Page Url]
+google_analytics: [Google Analytics Tracking ID]
+```
+Please configure this before using the theme.  
+And to enable Google Analytics, add your [Traking ID](https://support.google.com/analytics/answer/1008080?visit_id=1-636579797402349951-2693679291&rd=1)
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+### About You
+Meta variables hold basic information about your profile and resume.  
+Change these variables in _config.yml:  
+```yml
+author:
+  name: [Your Name]
+  desc: [Short introduction]
+  email: [Your E-Mail Address]
+  selfie: [Your Avatar]
+```
+Please configure this before using the theme.
+
+
+
+### SNS Information
+Your SNS information to display at the bottom of the page.  
+All values except "email" are text values.  
+```yml
+social:
+  email: true
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  github: 
+  google_plus:
+  instagram:
+  keybase:
+  linkedin:
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:
+  steam:
+  tumblr:
+  gitlab:
+  twitter: 
+  vimeo:
+  wordpress:
+  youtube:
+  default_txt: "Follow On"
+```
+
+
+## Portfolio Schema
+```markdown
+---
+layout: post
+title:  [Project title to show in portfolio list]
+info: [A brief introduction to show in portfolio list]
+tech: [The technologies used in the project to show in portfolio list]
+type: [Property of the project to be displayed in front of the project's info(toy or company name)]
+---
+```
+
+## Other formats
+It uses the markdown syntax by default, and there is no format other than the one mentioned above.  
+You can use it as you like.  
+
+
+## License
+[The MIT License (MIT)](https://raw.githubusercontent.com/kssim/ap/master/LICENSE)
